@@ -2,6 +2,7 @@ import csv
 from datetime import datetime
 
 from fpdf import FPDF
+from os import makedirs, path
 
 
 def transaction_logger(func):
@@ -25,7 +26,7 @@ def transaction_logger(func):
         ]
 
         # Create logs directory if it doesn't exist
-        from os import makedirs, path
+     
 
         makedirs("logs", exist_ok=True)
         log_path = f"logs/{self.username}_transactions.csv"
